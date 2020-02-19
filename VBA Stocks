@@ -1,8 +1,8 @@
  Unit 2 | Assignment - The VBA of Wall Street
-Sub StockMarketAnalysis():
+Sub StockMarketAnalysis()
 
     ' Loop / Iterate Through All Worksheets
-    For Each ws In Worksheets   18668415037
+    For Each ws In Worksheets   
 
         ' Column Headers / Data Field Labels
         ws.Range("I1").Value = "Ticker"
@@ -46,7 +46,7 @@ Sub StockMarketAnalysis():
             ' Check If We Are Still Within The Same Ticker Name If It Is Not...
             If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
 
-' ### Easy ###
+
 
                 ' Set Ticker Name
                 TickerName = ws.Cells(i, 1).Value
@@ -56,8 +56,6 @@ Sub StockMarketAnalysis():
                 ws.Range("L" & SummaryTableRow).Value = TotalTickerVolume
                 ' Reset Ticker Total
                 TotalTickerVolume = 0
-
-' ### Moderate ###
 
                 ' Set Yearly Open, Yearly Close and Yearly Change Name
                 YearlyOpen = ws.Range("C" & PreviousAmount)
@@ -88,8 +86,6 @@ Sub StockMarketAnalysis():
                 PreviousAmount = i + 1
                 End If
             Next i
-
-' ### Hard ###
 
             ' Greatest % Increase, Greatest % Decrease and Greatest Total Volume
             LastRow = ws.Cells(Rows.Count, 11).End(xlUp).Row
